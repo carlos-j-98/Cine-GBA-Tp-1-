@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Cine_GBA.Data.Queries;
 using Cine_GBA.Data.DTO;
 using System.Threading;
+using Cine_GBA.Data.Models;
 
 namespace Cine_GBA.Application
 {
@@ -24,18 +25,32 @@ namespace Cine_GBA.Application
             Console.WriteLine("");
             Console.WriteLine("Peliculas en cartelera");
             Console.WriteLine("");
-            try 
+            ListPeliculas _listPeliculas = new ListPeliculas();
+            List<Peliculas> aux = _listPeliculas.ToList();
+            foreach(Peliculas objeto in aux) 
             {
-                ListPeliculas _listPeliculas = new ListPeliculas();
-                _listPeliculas.ToList();
-                List<PeliculasDTO> aux = _listPeliculas.ToList();
-                foreach(PeliculasDTO objeto in aux) 
-                {
-                    Console.WriteLine("--------------------------------------------------------------------");
-                    Console.WriteLine("\n PeliculaId: {0} " +
-                                      "\n Titulo: {1} " ,
-                                      objeto.PeliculaId, objeto.Titulo);
-                }
+                Console.WriteLine("--------------------------------------------------------------------");
+                Console.WriteLine("\n PeliculaId: {0} " +
+                                    "\n Titulo: {1} " ,
+                                    objeto.PeliculaId, objeto.Titulo);
+            }
+            
+        }
+
+        public void Board()
+        {
+            Console.Clear();
+            Console.WriteLine("========================================================================================================================");
+            Console.WriteLine("==================                                                                                    ==================");
+            Console.WriteLine("==================                               Cartelera de CINE-GBA                                ==================");
+            Console.WriteLine("==================                                                                                    ==================");
+            Console.WriteLine("========================================================================================================================");
+        }
+
+        public void AskMoreInfo() 
+        {
+            try
+            {
                 Console.WriteLine("");
                 Console.WriteLine("--------------------------------------------------------------------");
                 Console.WriteLine("");
@@ -47,7 +62,7 @@ namespace Cine_GBA.Application
                 Console.WriteLine("");
 
                 int _eleccion = Convert.ToInt32(Console.ReadLine());
-                
+
                 switch (_eleccion)
                 {
                     case 1:
@@ -86,18 +101,6 @@ namespace Cine_GBA.Application
                 ToListResumePeliculas();
             }
         }
-
-        public void Board()
-        {
-            Console.Clear();
-            Console.WriteLine("========================================================================================================================");
-            Console.WriteLine("==================                                                                                    ==================");
-            Console.WriteLine("==================                               Cartelera de CINE-GBA                                ==================");
-            Console.WriteLine("==================                                                                                    ==================");
-            Console.WriteLine("========================================================================================================================");
-        }
-
-
 
     }
 }

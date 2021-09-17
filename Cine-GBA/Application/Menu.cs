@@ -32,6 +32,26 @@ namespace Cine_GBA.Application
                     case 1:
                         MenuListPeliculas _menuPeliculas = new MenuListPeliculas();
                         _menuPeliculas.ToListResumePeliculas();
+                        _menuPeliculas.AskMoreInfo();
+                        break;
+                    case 2:
+                        MenuListFuncionByPelicula _menuFuncionesPelis = new MenuListFuncionByPelicula();
+                        _menuFuncionesPelis.SelectFuncion();
+                        break;
+                    case 3:
+                        NewFuncion _funcion = new NewFuncion();
+                        _funcion.MakeFuncion();
+                        break;
+                    case 4:
+                        MenuCreateTicket menuCreateTicket = new MenuCreateTicket();
+                        menuCreateTicket.DisplayFunciones();
+                        break;
+                    case 5:
+                        MenuMostradorDeTicketsDisponibles menuMostradorDeTicketsDisponibles = new MenuMostradorDeTicketsDisponibles();
+                        menuMostradorDeTicketsDisponibles.InitMenu();
+                        break;
+                    case 6:
+                        System.Environment.Exit(1);
                         break;
                 }
             }
@@ -41,7 +61,7 @@ namespace Cine_GBA.Application
                 Thread.Sleep(2000);
                 MenuInit();
             }
-
+            MenuInit();
         }
         public void ListOptions()
         {
@@ -50,11 +70,15 @@ namespace Cine_GBA.Application
             Console.WriteLine("--------------------------------------------------------------------");
             Console.WriteLine("");
             Console.WriteLine("1- Lista de peliculas");
-            Console.WriteLine("5- Salir");
+            Console.WriteLine("2- Ver funciones de una pelicula");
+            Console.WriteLine("3- Registrar nueva funcion");
+            Console.WriteLine("4- Obtener ticket para funcion");
+            Console.WriteLine("5- Ver tickets disponibles");
+            Console.WriteLine("6- Salir");
             Console.WriteLine("");
         }
 
-        public void Welcome() 
+        public static void Welcome() 
         {
             Console.Clear();
             Console.WriteLine("========================================================================================================================");

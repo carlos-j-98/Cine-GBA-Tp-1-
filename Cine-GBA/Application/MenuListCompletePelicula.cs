@@ -1,4 +1,5 @@
 ﻿using Cine_GBA.Data.DTO;
+using Cine_GBA.Data.Models;
 using Cine_GBA.Data.Queries;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,8 @@ namespace Cine_GBA.Application
             {
                 ListPeliculas _listPeliculas = new ListPeliculas();
                 _listPeliculas.ToList();
-                List<PeliculasDTO> aux = _listPeliculas.ToList();
-                foreach (PeliculasDTO objeto in aux)
+                List<Peliculas> aux = _listPeliculas.ToList();
+                foreach (Peliculas objeto in aux)
                 {
                     Console.WriteLine("--------------------------------------------------------------------");
                     Console.WriteLine("\n PeliculaId: {0} " +
@@ -66,10 +67,10 @@ namespace Cine_GBA.Application
             }
         }
 
-        public void ListCompletePeliculas(int _select, List<PeliculasDTO> _listPeliculas)
+        public void ListCompletePeliculas(int _select, List<Peliculas> _listPeliculas)
         {
             Console.Clear();
-            foreach (PeliculasDTO objeto in _listPeliculas)
+            foreach (Peliculas objeto in _listPeliculas)
             {
                 if (objeto.PeliculaId == _select) 
                 {

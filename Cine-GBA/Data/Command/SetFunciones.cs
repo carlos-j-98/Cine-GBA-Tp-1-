@@ -6,11 +6,9 @@ namespace Cine_GBA.Data.Command
     {
         public void AddFuncion(Funciones funcion) 
         {
-            using (var context = new ApplicationDbContext()) 
-            {
-                context.Funciones.Add(funcion);
-                context.SaveChanges();
-            }
+            using var context = new ApplicationDbContext();
+            context.Funciones.Add(funcion);
+            context.SaveChanges();
         }
     }
 }

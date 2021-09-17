@@ -13,10 +13,10 @@ namespace Cine_GBA.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {
-            new ConfigurationFunciones(modelBuilder.Entity<Funciones>());
-            new ConfigurationSalas(modelBuilder.Entity<Salas>());
-            new ConfigurationPeliculas(modelBuilder.Entity<Peliculas>());
-            new ConfigurationTickets(modelBuilder.Entity<Tickets>());
+            _ = new ConfigurationFunciones(modelBuilder.Entity<Funciones>());
+            _ = new ConfigurationSalas(modelBuilder.Entity<Salas>());
+            _ = new ConfigurationPeliculas(modelBuilder.Entity<Peliculas>());
+            _ = new ConfigurationTickets(modelBuilder.Entity<Tickets>());
 
             base.OnModelCreating(modelBuilder);
         }

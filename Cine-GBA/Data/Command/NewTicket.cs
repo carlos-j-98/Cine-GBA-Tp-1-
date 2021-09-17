@@ -11,11 +11,9 @@ namespace Cine_GBA.Data.Command
     {
         public void GenTicket(Tickets ticket) 
         {
-            using (var context = new ApplicationDbContext()) 
-            {
-                context.Tickets.Add(ticket);
-                context.SaveChanges();
-            }
+            using var context = new ApplicationDbContext();
+            context.Tickets.Add(ticket);
+            context.SaveChanges();
         }
     }
 }
