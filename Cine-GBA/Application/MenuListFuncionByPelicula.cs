@@ -27,11 +27,10 @@ namespace Cine_GBA.Application
 			Console.WriteLine("");
 			Console.WriteLine("Escriba el nombre de la pelicula que desea saber si existe una funcion");
 			Console.WriteLine("");
-			Console.WriteLine("--------------------------------------------------------------------");
-			Console.WriteLine("");
 
 			DisplayPeliculas();
 
+			Console.WriteLine("");
 			Console.Write("Deseo ver la pelicula: ");
 			
 			try 
@@ -43,9 +42,10 @@ namespace Cine_GBA.Application
 			{
 				Console.WriteLine("");
 				Console.WriteLine("La pelicula indicada no existe o no pertenece a ninguna funcion en cartelera");
-				Console.WriteLine("Regresando al menu de eleccion de funciones por peliculas");
 				Thread.Sleep(3000);
-				SelectFuncion();
+				Console.WriteLine("Presione cualquier boton para regresar al menu principal");
+				Console.ReadKey();
+
 			}
 
 		}
@@ -65,10 +65,11 @@ namespace Cine_GBA.Application
 			Console.WriteLine("Peliculas en cartelera");
 			Console.WriteLine("");
 			ListPeliculas _listPeliculas = new ListPeliculas();
-			List<Peliculas> aux = _listPeliculas.ToList();
-			foreach (Peliculas objeto in aux)
+			int numero = 1;
+			foreach (Peliculas objeto in _listPeliculas.ToList())
 			{
-				Console.WriteLine("\n Titulo: {0} ",objeto.Titulo);
+				Console.WriteLine("\n{0}) - Titulo: {1} ",numero,objeto.Titulo);
+				numero++;
 			}
 
 		}
