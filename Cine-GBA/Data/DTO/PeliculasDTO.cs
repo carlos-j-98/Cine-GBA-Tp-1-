@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cine_GBA.Data.DTO
+﻿namespace Cine_GBA.Data.DTO
 {
     public class PeliculasDTO
     {

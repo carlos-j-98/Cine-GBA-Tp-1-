@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Cine_GBA.Data.Models;
+﻿using Cine_GBA.Data.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Cine_GBA.Data.Configuration
 {
     class ConfigurationFunciones
     {
-        public ConfigurationFunciones(EntityTypeBuilder<Funciones> Builder) 
+        public ConfigurationFunciones(EntityTypeBuilder<Funciones> Builder)
         {
             Builder.HasKey(s => s.FuncionId);
             Builder.Property(s => s.Fecha).IsRequired();

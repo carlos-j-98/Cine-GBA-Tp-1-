@@ -1,23 +1,19 @@
-﻿using Cine_GBA.Data.DTO;
-using Cine_GBA.Data.Models;
+﻿using Cine_GBA.Data.Models;
 using Cine_GBA.Data.Queries;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Cine_GBA.Application
 {
     public class MenuListCompletePelicula
     {
-        public MenuListCompletePelicula() 
+        public MenuListCompletePelicula()
         {
             Console.Clear();
         }
 
-        public void SelectPelicula() 
+        public void SelectPelicula()
         {
             Console.Clear();
             Board();
@@ -72,7 +68,7 @@ namespace Cine_GBA.Application
             Console.Clear();
             foreach (Peliculas objeto in _listPeliculas)
             {
-                if (objeto.PeliculaId == _select) 
+                if (objeto.PeliculaId == _select)
                 {
                     Console.WriteLine("--------------------------------------------------------------------");
                     Console.WriteLine("\n PeliculaId: {0} " +

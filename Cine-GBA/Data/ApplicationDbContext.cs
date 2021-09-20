@@ -1,5 +1,5 @@
-﻿using Cine_GBA.Data.Models;
-using Cine_GBA.Data.Configuration;
+﻿using Cine_GBA.Data.Configuration;
+using Cine_GBA.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cine_GBA.Data
@@ -11,7 +11,7 @@ namespace Cine_GBA.Data
         public DbSet<Salas> Salas { get; set; }
         public DbSet<Tickets> Tickets { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             _ = new ConfigurationFunciones(modelBuilder.Entity<Funciones>());
             _ = new ConfigurationSalas(modelBuilder.Entity<Salas>());
@@ -25,6 +25,6 @@ namespace Cine_GBA.Data
         {
             optionsBuilder.UseSqlServer("server = localhost; Database = Cine-GBA ; Trusted_Connection = True; MultipleActiveResultSets = True");
         }
-        
+
     }
 }

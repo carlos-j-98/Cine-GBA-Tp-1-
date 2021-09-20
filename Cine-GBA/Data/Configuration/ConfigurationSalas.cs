@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Cine_GBA.Data.Models;
+﻿using Cine_GBA.Data.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Cine_GBA.Data.Configuration
 {
     class ConfigurationSalas
     {
-        public ConfigurationSalas(EntityTypeBuilder<Salas> Builder) 
+        public ConfigurationSalas(EntityTypeBuilder<Salas> Builder)
         {
 
             Builder.HasKey(s => s.SalaId);

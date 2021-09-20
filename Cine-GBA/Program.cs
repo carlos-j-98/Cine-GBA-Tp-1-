@@ -1,5 +1,4 @@
-﻿using System;
-using Cine_GBA.Application;
+﻿using Cine_GBA.Application;
 
 namespace Cine_GBA
 {

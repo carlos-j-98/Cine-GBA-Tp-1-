@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Cine_GBA.Application
 {
     public class Menu
     {
-        public Menu() 
+        public Menu()
         {
             Console.Clear();
         }
-        public void MenuInit() 
+        public void MenuInit()
         {
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.White;
@@ -65,7 +61,7 @@ namespace Cine_GBA.Application
         }
         public void ListOptions()
         {
-            
+
             Console.WriteLine("");
             Console.WriteLine("--------------------------------------------------------------------");
             Console.WriteLine("");
@@ -78,7 +74,7 @@ namespace Cine_GBA.Application
             Console.WriteLine("");
         }
 
-        public static void Welcome() 
+        public static void Welcome()
         {
             Console.Clear();
             Console.WriteLine("========================================================================================================================");

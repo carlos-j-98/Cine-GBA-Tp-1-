@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cine_GBA.Data.Models;
 using Cine_GBA.Data.Queries;
-using Cine_GBA.Data.DTO;
+using System;
+using System.Collections.Generic;
 using System.Threading;
-using Cine_GBA.Data.Models;
 
 namespace Cine_GBA.Application
 {
     public class MenuListPeliculas
     {
-        public MenuListPeliculas() 
+        public MenuListPeliculas()
         {
             Console.Clear();
         }
 
-        public void ToListResumePeliculas() 
+        public void ToListResumePeliculas()
         {
             Console.Clear();
             Board();
@@ -27,14 +23,14 @@ namespace Cine_GBA.Application
             Console.WriteLine("");
             ListPeliculas _listPeliculas = new ListPeliculas();
             List<Peliculas> aux = _listPeliculas.ToList();
-            foreach(Peliculas objeto in aux) 
+            foreach (Peliculas objeto in aux)
             {
                 Console.WriteLine("--------------------------------------------------------------------");
                 Console.WriteLine("\n PeliculaId: {0} " +
-                                    "\n Titulo: {1} " ,
+                                    "\n Titulo: {1} ",
                                     objeto.PeliculaId, objeto.Titulo);
             }
-            
+
         }
 
         public void Board()
@@ -47,7 +43,7 @@ namespace Cine_GBA.Application
             Console.WriteLine("========================================================================================================================");
         }
 
-        public void AskMoreInfo() 
+        public void AskMoreInfo()
         {
             try
             {

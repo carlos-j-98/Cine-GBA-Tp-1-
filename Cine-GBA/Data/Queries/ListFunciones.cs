@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cine_GBA.Data.Queries
 {
@@ -14,6 +12,14 @@ namespace Cine_GBA.Data.Queries
             using var context = new ApplicationDbContext();
             var _listFunciones = (from _funciones in context.Funciones select _funciones).ToList();
             return _listFunciones;
+        }
+        public List<Funciones> ToListFuncionesByFechaSala(int idSala, DateTime Fecha)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var funciones = (from x in context.Funciones where x.SalaId == idSala where x.Fecha == Fecha select x).ToList();
+                return funciones;
+            }
         }
     }
 }
